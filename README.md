@@ -1,6 +1,6 @@
 # **Overview**
 
-This is the frontend for a role-based access control (RBAC) application, developed using React. 
+This is the frontend for a role-based access application, developed using React. 
 
 It allows users to log in, view specific pages based on their roles (Admin or User), and displays appropriate error messages for unauthorized or forbidden access.
 
