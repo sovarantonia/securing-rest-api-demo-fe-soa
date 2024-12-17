@@ -1,3 +1,59 @@
+# **Overview**
+
+This is the frontend for a role-based access control (RBAC) application, developed using React. 
+
+It allows users to log in, view specific pages based on their roles (Admin or User), and displays appropriate error messages for unauthorized or forbidden access.
+
+The frontend communicates with a backend API to authenticate users, manage sessions, and fetch role-based data.
+
+# **Features**
+
+- **Role-Based Access Control**:
+
+  - Admins can access the Admin Page and User Page.
+  - Users can access the User Page.
+  - Unauthorized users are redirected to an error page.
+
+- **Authentication**:
+
+  - Users log in using their credentials.
+  - JWT tokens are stored in session storage for secure session management.
+
+- **Dynamic Navigation**:
+
+  - Routes are protected using a PrivateRoute component that verifies roles and tokens.
+   
+- **Error Handling**:
+
+  - Custom error pages for unauthorized and forbidden access.
+  - Informative error messages displayed based on the issue.
+
+
+# **Usage**
+
+**Available Pages**
+
+- **Login Page** (/):
+
+  - Allows users to log in.
+  - On successful login:
+      -   Admins are redirected to /admin.
+      -   Users are redirected to /user.
+
+- **Admin Page** (/admin):
+
+  - Only accessible by users with the ROLE_ADMIN.
+
+- **User Page** (/user):
+    - Accessible by users with ROLE_USER or ROLE_ADMIN.
+
+- **Error Pages**:
+
+    - Unauthorized Access (/unauthorized): Triggered when there is no valid token.
+    - Forbidden Access (/forbidden): Triggered when the user’s role does not match the required role for a page.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
